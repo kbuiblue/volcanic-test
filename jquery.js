@@ -1,7 +1,13 @@
 import $ from "jquery";
 
 $(function () {
-    setTimeout(() => {
-        $("h1").text("Hello Volcanic!");
-    }, 1000)
+    const tabs = $("header-content a");
+
+    tabs.on("click", function (e) {
+        e.preventDefault();
+
+        const sectionId = $(this).attr("href");
+
+        window.location.hash = sectionId;
+    });
 });

@@ -1,0 +1,36 @@
+$first-color: #e67c28;
+$second-color: #ffffff;
+$third-color: #ebebeb;
+$fourth-color: #3b3f4a;
+$fifth-color: #798091;
+
+@mixin section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+@mixin clickable {
+    cursor: pointer;
+    text-decoration: none;
+    color: $second-color;
+    text-transform: uppercase;
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+@mixin dark-blur-background {
+    background-color: rgba(0, 0, 0, 0.2);
+    filter: blur(0.5px);
+}
+
+.primary {
+    background-color: $first-color;
+}
+
+.secondary {
+    color: $fourth-color;
+}

@@ -1,5 +1,37 @@
-@import 'css-reset';
+@import "css-reset";
+@import "global";
+@import "header";
+@import "sections";
 
-h1 {
-    color: red;
+html {
+    font-family: Inter, sans-serif;
+    scroll-behavior: smooth;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: Inter Variable, sans-serif;
+    }
+}
+
+header {
+    @include dark-blur-background;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    text-shadow: 1px 1px 8px $fifth-color;
+}
+
+button {
+    @include clickable;
+
+    font-family: Inter, sans-serif;
+    font-size: 0.8rem;
+    padding: 0.8em 1em;
+    border: none;
+}
+
+a {
+    @include clickable;
 }
