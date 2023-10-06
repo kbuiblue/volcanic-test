@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: clamp(300px, 95vw, 100vw);
+    width: clamp(300px, 90vw, 100vw);
     min-height: 5em;
 
     & > * {
@@ -27,33 +27,30 @@
         justify-content: right;
         align-items: center;
         min-width: 30%;
-        gap: 1.5em;
+        gap: 1.75em;
         flex-wrap: nowrap;
 
-        ul {
+        .nav-links {
             display: grid;
             grid-template-columns: repeat(7, minmax(100px, 1fr));
+            grid-gap: 1.25em;
             font-size: 0.4em;
             min-height: 100%;
             width: clamp(500px, 90%, 800px);
         }
 
-        li {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100%;
-            padding: 1.5em;
-        }
-
-        li:hover {
-            box-shadow: 0 0.5em 0 $first-color inset;
-        }
-
         a {
             display: flex;
             justify-content: center;
+            align-items: center;
             font-size: clamp(0.5rem, 0.9rem, 1.25rem);
+            min-height: 100%;
+            min-width: fit-content;
+            padding: 1.5em 0.25em;
+        }
+
+        a:hover {
+            box-shadow: 0 0.5em 0 $first-color inset;
         }
 
         .nav-buttons {

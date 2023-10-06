@@ -22,9 +22,8 @@ $fifth-color: #798091;
     }
 }
 
-@mixin dark-blur-background {
-    background-color: rgba(0, 0, 0, 0.2);
-    filter: blur(0.5px);
+@mixin backdrop-filter {
+    backdrop-filter: blur(2px) saturate(0.9);
 }
 
 .primary {

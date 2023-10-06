@@ -1,11 +1,14 @@
 @import "css-reset";
 @import "global";
 @import "header";
-@import "sections";
+@import "hero";
 
 html {
     font-family: Inter, sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
     scroll-behavior: smooth;
+    color: $second-color;
 }
 
 @supports (font-variation-settings: normal) {
@@ -15,12 +18,15 @@ html {
 }
 
 header {
-    @include dark-blur-background;
+    @include backdrop-filter;
 
-    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
     top: 0;
-    z-index: 1;
-    text-shadow: 1px 1px 8px $fifth-color;
+    min-width: 100%;
+    z-index: 2;
+    text-shadow: 1px 1px 8px #000;
 }
 
 button {
