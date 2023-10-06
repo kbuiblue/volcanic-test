@@ -19,6 +19,7 @@ html {
 
 header {
     @include backdrop-filter;
+    @include text-shadow;
 
     display: flex;
     justify-content: space-between;
@@ -26,7 +27,6 @@ header {
     top: 0;
     min-width: 100%;
     z-index: 2;
-    text-shadow: 1px 1px 8px #000;
 }
 
 button {

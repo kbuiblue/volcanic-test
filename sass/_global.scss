@@ -26,6 +26,10 @@ $fifth-color: #798091;
     backdrop-filter: blur(2px) saturate(0.9);
 }
 
+@mixin text-shadow {
+    text-shadow: 1px 1px 8px #000;
+}
+
 .primary {
     background-color: $first-color;
 }

@@ -1,14 +1,4 @@
-.hero {
-    @include dark-blur-background;
-    @include section;
 
-    position: relative;
-
-    h1 {
-        font-size: clamp(2rem, 15rem, 6rem);
-        font-weight: 900;
-    }
-}
 
 .latest-jobs {
     @include section;
