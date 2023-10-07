@@ -4,6 +4,18 @@ $third-color: #ebebeb;
 $fourth-color: #3b3f4a;
 $fifth-color: #798091;
 
+@mixin default-font {
+    font-family: Inter, sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+
+    @supports (font-variation-settings: normal) {
+        html {
+            font-family: Inter Variable, sans-serif;
+        }
+    }
+}
+
 @mixin section {
     display: flex;
     justify-content: center;

@@ -20,17 +20,16 @@
         align-items: center;
         height: 100%;
         width: 100%;
-        padding-bottom: 10%;
 
         h1 {
             @include text-shadow;
+            @include default-font;
 
             text-align: center;
             font-size: clamp(1rem, 3.25rem, 4rem);
             font-weight: 700;
-            line-height: 1.3;
             max-width: 50%;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.75em;
         }
 
         form {
@@ -42,7 +41,8 @@
         }
 
         form > input {
-            font-family: Inter Variable, sans-serif;
+            @include default-font;
+
             min-height: 1em;
             width: 30%;
             padding: 1em 1.5em;
@@ -55,11 +55,10 @@
     }
 
     .carousel-container {
-        position: absolute;
-        bottom: 0;
         min-width: 100vw;
         background-color: rgba(#222222, 0.2);
         backdrop-filter: blur(5px);
+        padding: 1em 0;
 
 
         .hero-carousel {
@@ -70,7 +69,7 @@
             min-height: 10%;
             max-width: 80%;
             margin: 0 auto;
-            padding: 1em 0;
+            padding: 0.5em 0;
     
             
             .previous-page,

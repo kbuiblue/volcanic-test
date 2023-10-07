@@ -34,7 +34,7 @@
             display: grid;
             grid-template-columns: repeat(7, minmax(100px, 1fr));
             grid-gap: 1.25em;
-            font-size: 0.4em;
+            font-size: 0.4rem;
             min-height: 100%;
             width: clamp(500px, 90%, 800px);
         }

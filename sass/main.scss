@@ -4,17 +4,10 @@
 @import "hero";
 
 html {
-    font-family: Inter, sans-serif;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
+    @include default-font;
+
     scroll-behavior: smooth;
     color: $second-color;
-}
-
-@supports (font-variation-settings: normal) {
-    html {
-        font-family: Inter Variable, sans-serif;
-    }
 }
 
 header {
@@ -31,8 +24,8 @@ header {
 
 button {
     @include clickable;
-
-    font-family: Inter, sans-serif;
+    @include default-font;
+    
     font-size: 0.8rem;
     padding: 0.8em 1em;
     border: none;
