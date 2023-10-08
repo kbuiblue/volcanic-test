@@ -3,7 +3,6 @@
 .hero {
     @include section;
 
-    display: flex;
     flex-direction: column;
     position: relative;
     background-image: url("./images/hero-image-2.jpg");
@@ -26,7 +25,7 @@
             @include default-font;
 
             text-align: center;
-            font-size: clamp(1rem, 3.25rem, 4rem);
+            font-size: clamp(1rem, 3rem, 4rem);
             font-weight: 700;
             max-width: 50%;
             margin-bottom: 0.75em;
@@ -55,10 +54,10 @@
     }
 
     .carousel-container {
-        min-width: 100vw;
+        width: 100%;
         background-color: rgba(#222222, 0.2);
         backdrop-filter: blur(5px);
-        padding: 1em 0;
+        padding: 0.5em 0;
 
 
         .hero-carousel {
@@ -67,7 +66,7 @@
             display: flex;
             justify-content: center;
             min-height: 10%;
-            max-width: 80%;
+            width: clamp(300px, 60%, 100%);
             margin: 0 auto;
             padding: 0.5em 0;
     
@@ -75,6 +74,7 @@
             .previous-page,
             .next-page {
                 @include clickable;
+                user-select: none;
             }
     
             .previous-page {
@@ -90,7 +90,6 @@
                 justify-content: center;
                 align-self: center;
                 gap: 1em;
-                margin: 0 2em;
                 min-height: 100%;
                 min-width: 80%;
                 order: 2;
@@ -103,7 +102,8 @@
                 grid-gap: 1em;
                 padding: 1em 0;
                 width: clamp(5em, 10em, 12em);
-                min-height: max-content;
+                height: clamp(7em, 12em, 15em);
+                min-height: fit-content;
                 
                 .image-container {
                     display: flex;

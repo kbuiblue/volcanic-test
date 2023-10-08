@@ -20,7 +20,7 @@ $fifth-color: #798091;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 85vh;
+    min-height: 80vh;
 }
 
 @mixin clickable {
@@ -48,4 +48,38 @@ $fifth-color: #798091;
 
 .secondary {
     color: $fourth-color;
+}
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+}
+
+.slide-in {
+    animation: slide-in 0.75s ease-in-out;
+}
+
+.slide-out {
+    animation: slide-out 0.75s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-10%);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    } to {
+        transform: translateX(10%);
+        opacity: 0;
+    }
 }
