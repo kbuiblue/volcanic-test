@@ -1,21 +1,19 @@
 import $ from "jquery";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick.min.js";
-import { PAGE_LIMIT } from "./js/index";
+import { PAGE_LIMIT, debounce } from "./js/index";
 import { sellingPoints, latestJobs } from "./js/data";
 
+const tabs = $(".header-content a");
+const searchJobBtn = $(".search-form button");
+
+const heroCarousel = $(".hero-carousel");
+const heroCarouselList = $(".hero-carousel ul");
+
 $(function () {
-    const tabs = $(".header-content a");
-    const searchJobBtn = $(".search-form button");
-
-    const heroCarousel = $(".hero-carousel");
-    const heroCarouselList = $(".hero-carousel ul");
-
     tabs.on("click", function (e) {
         e.preventDefault();
-
         const sectionId = $(this).attr("href");
-
         window.location.hash = sectionId;
     });
 
@@ -106,4 +104,25 @@ $(function () {
     }
 
     initializeHeroCarousel();
+});
+
+$(function () {
+    $(window).on(
+        "scroll",
+        debounce(function () {
+            const targetSection = window.location.hash
+                ? $(window.location.hash)
+                : $("#home");
+            const distanceThreshold = 200;
+
+            const scrollTop = $(window).scrollTop();
+            const sectionOffset = targetSection.offset().top;
+            const distance = Math.abs(scrollTop - sectionOffset);
+
+            if (distance > distanceThreshold) {
+                const url = window.location.href.split("#")[0];
+                history.replaceState(null, null, url);
+            }
+        }, 1000)
+    );
 });

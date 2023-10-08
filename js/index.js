@@ -6,6 +6,20 @@ import { sellingPoints, latestJobs } from "./data";
 
 export const PAGE_LIMIT = 5;
 
+export function debounce(func, delay) {
+    let timeoutId;
+    
+    return function() {
+      const context = this;
+      const args = arguments;
+      
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(function() {
+        func.apply(context, args);
+      }, delay);
+    };
+  }
+
 export function getLatestJobsPages(paginationLimit, targetArray) {
     const pages = [];
 
