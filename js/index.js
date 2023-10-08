@@ -4,12 +4,7 @@ import "@fontsource-variable/inter";
 
 import { sellingPoints, latestJobs } from "./data";
 
-const DEFAULT_INDEX = 0;
 export const PAGE_LIMIT = 5;
-
-export const storedIndex = localStorage.getItem("index")
-    ? localStorage.getItem("index")
-    : DEFAULT_INDEX;
 
 export function getLatestJobsPages(paginationLimit, targetArray) {
     const pages = [];
@@ -22,14 +17,4 @@ export function getLatestJobsPages(paginationLimit, targetArray) {
     return pages;
 }
 
-export function getSellingPointsPage(index, paginationLimit, targetArray) {
-    const displayPage = targetArray.slice(index, index + paginationLimit);
-    return displayPage;
-}
-
-export const sellingPointsPage = getSellingPointsPage(
-    storedIndex,
-    PAGE_LIMIT,
-    sellingPoints
-);
 export const latestJobsPages = getLatestJobsPages(PAGE_LIMIT, latestJobs);

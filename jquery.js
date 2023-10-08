@@ -1,12 +1,7 @@
 import $ from "jquery";
-import {
-    storedIndex,
-    PAGE_LIMIT,
-    sellingPointsPage,
-    getSellingPointsPage,
-    latestJobsPages,
-    getLatestJobsPages,
-} from "./js/index";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.min.js";
+import { PAGE_LIMIT } from "./js/index";
 import { sellingPoints, latestJobs } from "./js/data";
 
 $(function () {
@@ -38,13 +33,20 @@ $(function () {
             "next-page"
         );
 
-        renderCarousel(sellingPointsPage);
+        renderCarousel();
         heroCarousel.append(previousPageEl);
         heroCarousel.append(nextPageEl);
     }
 
-    function renderCarousel(carouselPage) {
-        carouselPage.forEach((sellingPoint) => {
+    function createImageElement(src, className) {
+        const imageEl = $("<img></img>");
+        imageEl.attr("src", src);
+        imageEl.addClass(className);
+        return imageEl;
+    }
+
+    function renderCarousel() {
+        sellingPoints.forEach((sellingPoint) => {
             const newSellingPointEl = $("<li></li>");
             const sellingPointTextEl = $("<p></p>");
             const sellingPointImage = createSellingPointImage();
@@ -54,14 +56,6 @@ $(function () {
             newSellingPointEl.append(sellingPointImage);
             heroCarouselList.append(newSellingPointEl);
         });
-        heroCarouselList.addClass("slide-in");
-    }
-
-    function createImageElement(src, className) {
-        const imageEl = $("<img></img>");
-        imageEl.attr("src", src);
-        imageEl.addClass(className);
-        return imageEl;
     }
 
     function createSellingPointImage() {
@@ -87,58 +81,29 @@ $(function () {
 
     renderInitialHeroCarousel();
 
-    const heroCarouselButtons = $(
-        ".hero-carousel .previous-page, .hero-carousel .next-page"
-    );
-    const previousPage = $(".hero-carousel .previous-page");
-    const nextPage = $(".hero-carousel .next-page");
-
-    heroCarouselButtons.on("click", function (e) {
-        const oldSellingPoints = $(".hero-carousel ul li");
-        const storedIndex = localStorage.getItem("index")
-            ? parseInt(localStorage.getItem("index"))
-            : 0;
-        let newIndex;
-
-        if ($(this).hasClass("previous-page") && storedIndex > 0) {
-            newIndex = storedIndex - 1;
-            localStorage.setItem("index", newIndex);
-            oldSellingPoints.addClass("slide-out");
-            updateCarousel(newIndex, oldSellingPoints);
-        } else if (
-            $(this).hasClass("next-page") &&
-            storedIndex + PAGE_LIMIT < sellingPoints.length
-        ) {
-            newIndex = storedIndex + 1;
-            localStorage.setItem("index", newIndex);
-            oldSellingPoints.addClass("slide-out");
-            updateCarousel(newIndex, oldSellingPoints);
-        }
-
-        updateDisabledPageButtons(newIndex, PAGE_LIMIT, sellingPoints)
-    });
-
-    function updateCarousel(index, oldSellingPoints) {
-        const newPage = getSellingPointsPage(index, PAGE_LIMIT, sellingPoints);
-        
-        oldSellingPoints.on("animationend", function() {
-            oldSellingPoints.remove();
-
-            renderCarousel(newPage);
-        })
+    function initializeHeroCarousel() {
+        heroCarouselList.slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: PAGE_LIMIT,
+            slidesToScroll: 1,
+            prevArrow: $(".hero-carousel .previous-page"),
+            nextArrow: $(".hero-carousel .next-page"),
+            swipeToSlide: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true,
+                    },
+                },
+            ],
+        });
     }
 
-    function updateDisabledPageButtons(newIndex, PAGE_LIMIT, sellingPoints) {
-        if (newIndex === 0) {
-            previousPage.addClass("disabled");
-        } else {
-            previousPage.removeClass("disabled");
-        }
-    
-        if (newIndex + PAGE_LIMIT >= sellingPoints.length) {
-            nextPage.addClass("disabled");
-        } else {
-            nextPage.removeClass("disabled");
-        }
-    }
+    initializeHeroCarousel();
 });
