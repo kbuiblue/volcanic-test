@@ -21,6 +21,27 @@ $(function () {
         e.preventDefault();
     });
 
+    $(window).on(
+        "scroll",
+        debounce(function () {
+            const targetSection = window.location.hash
+                ? $(window.location.hash)
+                : $("#home");
+            const distanceThreshold = 200;
+
+            const scrollTop = $(window).scrollTop();
+            const sectionOffset = targetSection.offset().top;
+            const distance = Math.abs(scrollTop - sectionOffset);
+
+            if (distance > distanceThreshold) {
+                const url = window.location.href.split("#")[0];
+                history.replaceState(null, null, url);
+            }
+        }, 1000)
+    );
+});
+
+$(function () {
     function renderInitialHeroCarousel() {
         const previousPageEl = createImageElement(
             "./svg/carousel-arrow-left.svg",
@@ -107,22 +128,60 @@ $(function () {
 });
 
 $(function () {
-    $(window).on(
-        "scroll",
-        debounce(function () {
-            const targetSection = window.location.hash
-                ? $(window.location.hash)
-                : $("#home");
-            const distanceThreshold = 200;
+    const jobCarouselList = $(".jobs-carousel .carousel-container ul");
 
-            const scrollTop = $(window).scrollTop();
-            const sectionOffset = targetSection.offset().top;
-            const distance = Math.abs(scrollTop - sectionOffset);
+    latestJobs.forEach((job) => {
+        const newJobEl = $("<li></li>");
+        const jobTitleEl = $("<h3></h3>");
+        const jobSalaryLocationEl = $("<h4></h4>");
+        const jobLocationEl = $("<span></span>");
+        const jobHeadingsContainer = $("<div></div>");
 
-            if (distance > distanceThreshold) {
-                const url = window.location.href.split("#")[0];
-                history.replaceState(null, null, url);
-            }
-        }, 1000)
-    );
+        const jobDescriptionEl = $("<p></p>");
+        const jobButtonContainer = $("<div></div>");
+        const jobApplyButtonEl = $("<button></button>");
+
+        const jobElementsArray = [
+            jobHeadingsContainer,
+            jobDescriptionEl,
+            jobButtonContainer,
+        ];
+
+        jobTitleEl.text(job.title);
+        jobLocationEl.text(job.location);
+        jobLocationEl.addClass("job-location");
+
+        jobSalaryLocationEl.text(`${job.salaryRange} | `);
+        jobSalaryLocationEl.append(jobLocationEl);
+        jobHeadingsContainer.append(jobTitleEl, jobSalaryLocationEl);
+        jobHeadingsContainer.addClass("job-headings");
+
+        jobDescriptionEl.text(`${job.description.substring(0, 150)}...`);
+        jobApplyButtonEl.text("Apply");
+        jobApplyButtonEl.addClass("secondary");
+
+        jobButtonContainer.append(jobApplyButtonEl);
+        jobButtonContainer.addClass("button-container");
+
+        jobElementsArray.forEach((element) => {
+            newJobEl.append(element);
+        });
+
+        jobCarouselList.append(newJobEl);
+    });
+
+    function initializeJobsCarousel() {
+        jobCarouselList.slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            prevArrow: false,
+            nextArrow: false,
+            slidesToShow: PAGE_LIMIT,
+            slidesToScroll: PAGE_LIMIT,
+            swipeToSlide: false,
+        });
+    }
+
+    initializeJobsCarousel();
 });

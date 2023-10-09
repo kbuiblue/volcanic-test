@@ -59,32 +59,30 @@
         backdrop-filter: blur(5px);
         padding: 0.5em 0;
 
-
         .hero-carousel {
             @include text-shadow;
-            
+
             display: flex;
             justify-content: center;
             min-height: 10%;
             width: clamp(300px, 60%, 100%);
             margin: 0 auto;
             padding: 0.5em 0;
-    
-            
+
             .previous-page,
             .next-page {
                 @include clickable;
                 user-select: none;
             }
-    
+
             .previous-page {
                 order: 1;
             }
-    
+
             .next-page {
                 order: 3;
             }
-    
+
             ul {
                 display: flex;
                 justify-content: center;
@@ -94,7 +92,7 @@
                 min-width: 80%;
                 order: 2;
             }
-    
+
             li {
                 display: grid;
                 grid-auto-rows: min-content;
@@ -104,7 +102,7 @@
                 width: clamp(5em, 10em, 12em);
                 height: clamp(7em, 12em, 15em);
                 min-height: fit-content;
-                
+
                 .image-container {
                     display: flex;
                     justify-content: center;
@@ -119,26 +117,27 @@
                     max-width: 4.75em;
                 }
 
-                .image:hover {
-                    cursor: pointer;
-                    background-color: $second-color;
-                }
+                @media (hover: hover) {
+                    .image:hover {
+                        cursor: pointer;
+                        background-color: $second-color;
+                    }
 
-                .image:hover > svg > * {
-                    stroke: $first-color;
+                    .image:hover > svg > * {
+                        stroke: $first-color;
+                    }
                 }
 
                 p {
                     order: 2;
                 }
             }
-    
-            img, svg {
+
+            img,
+            svg {
                 width: 3em;
                 border-radius: 50px;
             }
         }
     }
-
-    
 }

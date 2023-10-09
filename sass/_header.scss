@@ -14,7 +14,7 @@
     .logo-container {
         display: flex;
         align-items: center;
-        
+
         .logo {
             padding-bottom: 0.5em;
             width: clamp(5em, 10em, 20em);
@@ -49,9 +49,11 @@
             padding: 1.5em 0.25em;
         }
 
-        a:hover {
-            box-shadow: 0 0.5em 0 $first-color inset;
-            color: $first-color;
+        @media (hover: hover) {
+            a:hover {
+                box-shadow: 0 0.5em 0 $first-color inset;
+                color: $first-color;
+            }
         }
 
         .nav-buttons {
