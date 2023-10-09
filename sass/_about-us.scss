@@ -20,7 +20,7 @@
 
         h2 {
             font-size: $h2-font-size;
-            font-weight: 700;
+            font-weight: $h2-font-weight;
         }
         
         p {
@@ -59,7 +59,7 @@
 
         ul > li > .stats-heading {
             font-size: clamp(1rem, 1.5rem, 1.75rem);
-            font-weight: 600;
+            font-weight: $h2-font-weight;
             color: $first-color;
         }
 
