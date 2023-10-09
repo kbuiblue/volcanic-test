@@ -25,7 +25,7 @@
             @include default-font;
 
             text-align: center;
-            font-size: clamp(1rem, 3rem, 4rem);
+            font-size: $h1-font-size;
             font-weight: 700;
             max-width: 50%;
             margin-bottom: 0.75em;
