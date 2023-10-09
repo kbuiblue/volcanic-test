@@ -1,5 +1,3 @@
-@import "global";
-
 .about-us {
     @include section;
     @include default-font;
@@ -71,6 +69,7 @@
 
     button {
         text-transform: none;
+        padding: 1em 1.5em;
         margin-top: 2em;
     }
 }

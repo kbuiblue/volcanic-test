@@ -1,3 +1,39 @@
 .testimonials {
     @include section;
+    @include default-font;
+
+    flex-direction: column;
+    color: $fourth-color;   
+    min-height: 50vh;
+    padding: 5%;
+
+    h2 {
+        font-size: $h2-font-size;
+    }
+    .testimonial-content {
+        max-width: 50%;
+        
+        .testimonial-quote {
+            text-align: center;
+            margin-top: 2em;
+        }
+    }
+
+    .testimonial-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2em;
+        gap: 1em;
+        color: $first-color;
+        font-weight: 500;
+
+        img {
+            width: 4em;
+            height: 4em;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+    }
+
 }
