@@ -1,0 +1,72 @@
+.latest-insights {
+    @include section;
+    @include default-font;
+
+    flex-direction: column;
+    color: $fourth-color;
+    max-width: 70%;
+    margin: 0 auto;
+
+    h2 {
+        font-size: $h2-font-size;
+    }
+
+    ul {
+        display: flex;
+        margin-top: 3em;
+        gap: 2em;
+
+        li {
+            cursor: pointer;
+            max-height: 25em;
+            width: clamp(18em, 18vw + 1rem, 20em);
+            z-index: 0;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                aspect-ratio: 4 / 3;
+            }
+
+            .insight-content {
+                visibility: hidden;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    0deg,
+                    rgba($first-color, 1),
+                    rgba($second-color, 0.5)
+                );
+                backdrop-filter: blur(3px);
+                color: $second-color;
+                text-shadow: 1px 1px 1px #000000;
+
+                padding: 1em;
+                padding-top: 30%;
+                z-index: 1;
+                opacity: 0;
+            }
+
+            h3 {
+                font-size: $h3-font-size;
+                font-weight: $h3-font-weight;
+            }
+
+            p {
+                font-size: $p-font-size;
+                margin-top: 1em;
+            }
+        }
+
+        @media (hover: hover) {
+            li:hover > .insight-content {
+                visibility: visible;
+                transform: translateY(-100%);
+                transition: all 0.75s ease-in-out;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -185,3 +185,13 @@ $(function () {
 
     initializeJobsCarousel();
 });
+
+// $(function () {
+//     const latestInsightsList = $(".latest-insights .image-gallery");
+
+//     latestInsightsList.forEach((li) => {
+//         li.addEventListener("click", () => {
+//             li.querySelector(".insight-content").addClass("show-content");
+//         });
+//     });
+// });
