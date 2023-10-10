@@ -5,7 +5,7 @@
     flex-direction: column;
     color: $fourth-color;
     max-width: 70%;
-    margin: 0 auto;
+    margin: 4em auto;
 
     h2 {
         font-size: $h2-font-size;
@@ -35,7 +35,7 @@
                 width: 100%;
                 height: 100%;
                 background: linear-gradient(
-                    0deg,
+                    10deg,
                     rgba($first-color, 1),
                     rgba($second-color, 0.5)
                 );
