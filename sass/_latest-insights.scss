@@ -1,17 +1,32 @@
-@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+@media (min-width: 320px) and (max-width: $breakpoint-mobile) {
     .latest-insights {
-        min-width: $breakpoint-mobile; 
+        min-width: $breakpoint-mobile;
 
         .image-gallery {
             flex-direction: column;
+            min-width: 350px;
             max-width: 100%;
 
             & > li {
-                max-height: 15em;
+                min-width: 350px;
+                max-height: 28em;
+                margin-bottom: 2em;
+
+                .insight-content {
+                    visibility: visible;
+                    padding-top: 5%;
+                    z-index: 1;
+                    opacity: 1;
+                    background: $first-color;
+                }
+
+                & > img {
+                    object-fit: cover;
+                    z-index: 0;
+                }
             }
         }
     }
-
 }
 
 .latest-insights {

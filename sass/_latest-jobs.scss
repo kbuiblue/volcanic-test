@@ -1,17 +1,37 @@
-@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+@media (min-width: 320px) and (max-width: $breakpoint-mobile) {
     #jobs {
         min-width: $breakpoint-mobile;
-        min-height: 100vh;
-        
-        .carousel-container {
-            flex-direction: column;
+        min-height: 80vh;
+
+        .carousel {
+            min-height: 20em;
             max-width: 70vw;
 
-            .slick-dots {
-                max-width: 70vw;
+            .jobs-carousel {
+                min-height: 40vh;
+
+                .slick-list {
+                    min-height: 25em;
+    
+                    .slick-track {
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        max-width: 100%;
+                        min-height: 20em;
+
+        
+                        & > .slick-slide {
+                            width: 100%;
+                            grid-template-rows: 1.5em 5em 3em 8em 4em 1fr;
+                        }
+                    }
+                }
+
+                .slick-dots {
+                    flex-wrap: wrap;
+                }
             }
         }
-
     }
 }
 
@@ -29,14 +49,14 @@
         text-align: center;
     }
 
-    .jobs-carousel {
+    .carousel {
         @include section;
 
         flex-direction: column;
         max-width: 100%;
         margin: 0 auto;
 
-        .carousel-container {
+        .jobs-carousel {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -45,7 +65,7 @@
             margin: 0 auto;
             min-height: 100%;
             max-width: 90%;
-            
+
             .slick-list {
                 display: flex;
                 width: 100%;
@@ -64,7 +84,7 @@
                 display: grid;
                 grid-template-rows: 1.5em 5em 1em 8em 1.5em 1fr;
                 grid-template-areas:
-                    "." 
+                    "."
                     "headings"
                     "."
                     "description"
@@ -155,7 +175,6 @@
                     text-indent: -9999px;
                 }
             }
-
         }
     }
 }

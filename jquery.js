@@ -106,16 +106,13 @@ $(function () {
             infinite: true,
             speed: 300,
             slidesToShow: PAGE_LIMIT,
-            slidesToScroll: 1,
+            slidesToScroll: PAGE_LIMIT,
             prevArrow: $(".hero-carousel .previous-page"),
             nextArrow: $(".hero-carousel .next-page"),
-            swipeToSlide: true,
             responsive: [
                 {
-                    breakpoint: 480,
+                    breakpoint: 490,
                     settings: {
-                        vertical: true,
-                        verticalSwiping: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         infinite: true,
@@ -127,10 +124,14 @@ $(function () {
     }
 
     initializeHeroCarousel();
+
+    heroCarouselList.on("afterChange", function() {
+        heroCarouselList.slick("getSlick").initDotEvents();
+    })
 });
 
 $(function () {
-    const jobCarouselList = $(".jobs-carousel .carousel-container ul");
+    const jobCarouselList = $(".jobs-carousel");
 
     latestJobs.forEach((job) => {
         const newJobEl = $("<li></li>");
@@ -177,19 +178,18 @@ $(function () {
             dots: true,
             infinite: false,
             speed: 300,
+            variableWidth: true,
             prevArrow: false,
             nextArrow: false,
             slidesToShow: PAGE_LIMIT,
             slidesToScroll: PAGE_LIMIT,
-            swipeToSlide: true,
             responsive: [
                 {
-                    breakpoint: 700,
+                    breakpoint: 481,
                     settings: {
-                        rows: 3,
-                        vertical: true,
-                        slidesToShow: 3,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
+                        infinite: false,
                     },
                 },
             ],
@@ -197,6 +197,10 @@ $(function () {
     }
 
     initializeJobsCarousel();
+
+    jobCarouselList.on("afterChange", function() {
+        jobCarouselList.slick("getSlick").initDotEvents();
+    })
 });
 
 // $(function () {

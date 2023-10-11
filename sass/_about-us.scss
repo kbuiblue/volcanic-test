@@ -1,16 +1,29 @@
 @media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
     #about {
-        min-height: 120vh;
+        min-height: 135vh;
+        max-height: 150vh;
         max-width: $breakpoint-mobile; 
-        background-position: 0 0;
+        background-position: 50% 0;
 
         .about-us-backdrop {
             margin: 0 auto;
 
-            .about-us-stats > ul {
-                flex-direction: column;
-                max-width: 70vw;
+            .about-us-stats {
+                margin-top: 15em;
+                max-height: 50vh;
+
+                & > ul {
+                    flex-direction: column;
+                    max-width: 70vw;
+                    max-height: 50vh;
+                    gap: 3em;
+                }
+
+                .button {
+                    margin-top: 10em;
+                }
             }
+
         }
 
     }

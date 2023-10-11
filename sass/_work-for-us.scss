@@ -11,6 +11,7 @@
         .work-for-us-content {
             height: 30vh;
             width: 70vw;
+            min-width: 350px;
             padding: 12em 1em;
             margin: 0 auto;
         }
@@ -18,11 +19,12 @@
         .work-for-us-image {
             justify-content: center;
             max-width: 80vw;
-
-
+            
+            
             & > img {
                 max-height: 20vh;
-                min-width: 70vw;
+                width: 70vw;
+                min-width: 350px;
             }
         }
 
