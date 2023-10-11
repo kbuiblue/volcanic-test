@@ -1,10 +1,10 @@
-@media (min-width: 320px) and (max-width: $breakpoint-mobile) {
+@media (max-width: $breakpoint-mobile) {
     #jobs {
-        min-width: $breakpoint-mobile;
-        min-height: 80vh;
+        width: clamp(320px, 100%, $breakpoint-mobile);
+        min-height: 85vh;
 
         .carousel {
-            min-height: 20em;
+            min-height: 25em;
             max-width: 70vw;
 
             .jobs-carousel {
@@ -14,15 +14,17 @@
                     min-height: 25em;
     
                     .slick-track {
-                        flex-direction: column;
-                        flex-wrap: wrap;
-                        max-width: 100%;
-                        min-height: 20em;
-
+                        min-height: 25em;
+                        gap: 0.025em;
         
                         & > .slick-slide {
                             width: 100%;
-                            grid-template-rows: 1.5em 5em 3em 8em 4em 1fr;
+                            min-height: 25em;
+                            grid-template-rows: 1.5em 5em 4em 8em 4em 1fr;
+
+                            & > :not(.button-container) {
+                                margin: 0 0.75em;
+                            }
                         }
                     }
                 }

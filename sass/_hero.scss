@@ -1,18 +1,35 @@
-@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
-    .hero {
-        @include section;
+@media (max-width: $breakpoint-mobile) {
+    #hero {
+        width: clamp(320px, 100%, $breakpoint-mobile);
+        min-height: 95vh;
 
-        max-width: $breakpoint-mobile;
-        aspect-ratio: initial;
+        .hero-content {
+            h1 {
+                font-size: $h1-mobile-size;
+                max-width: 90%;
+                margin: 4em 0 2em 0;
+            }
+
+            .search-form {
+                flex-direction: column;
+                width: 80%;
+                margin-bottom: 2em;
+                gap: 1em;
+
+                & > * {
+                    width: 100%;
+                    padding-top: 0.6em;
+                    padding-bottom: 0.6em;
+                }
+            }
+        }
 
         .carousel-container {
             display: flex;
             flex-direction: column;
+            padding: 0;
         }
-
-        
     }
-
 }
 
 .hero {
@@ -82,7 +99,7 @@
             min-height: 10%;
             width: clamp(300px, 60%, 100%);
             margin: 0 auto;
-            padding: 0.5em 0;
+            padding: 0.5em 0.25em;
 
             .previous-page,
             .next-page {

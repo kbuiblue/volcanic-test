@@ -1,14 +1,14 @@
-@media (min-width: 320px) and (max-width: $breakpoint-mobile) {
-    .latest-insights {
-        min-width: $breakpoint-mobile;
+@media (max-width: $breakpoint-mobile) {
+    #insights {
+        min-width: clamp(300px, 85vw, $breakpoint-mobile);
 
         .image-gallery {
             flex-direction: column;
-            min-width: 350px;
-            max-width: 100%;
+            width: clamp(300px, 80%, $breakpoint-mobile);
+
 
             & > li {
-                min-width: 350px;
+                width: clamp(300px, 100%, $breakpoint-mobile);
                 max-height: 28em;
                 margin-bottom: 2em;
 

@@ -16,7 +16,7 @@ html {
     color: $second-color;
 }
 
-@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+@media ( max-width: $breakpoint-mobile) {
     html,
     body,
     header {

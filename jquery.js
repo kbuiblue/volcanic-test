@@ -178,14 +178,13 @@ $(function () {
             dots: true,
             infinite: false,
             speed: 300,
-            variableWidth: true,
             prevArrow: false,
             nextArrow: false,
             slidesToShow: PAGE_LIMIT,
             slidesToScroll: PAGE_LIMIT,
             responsive: [
                 {
-                    breakpoint: 481,
+                    breakpoint: 479,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,

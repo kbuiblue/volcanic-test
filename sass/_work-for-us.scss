@@ -1,6 +1,6 @@
-@media (min-width: 320px) and ( max-width: $breakpoint-mobile) { 
+@media ( max-width: $breakpoint-mobile) { 
     #join-us { 
-        min-width: $breakpoint-mobile;
+        width: clamp(320px, 100%, $breakpoint-mobile);
 
         .content-container {
             min-height: 70vh;

@@ -1,26 +1,41 @@
-@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+@media (max-width: $breakpoint-mobile) {
     #about {
-        min-height: 135vh;
-        max-height: 150vh;
-        max-width: $breakpoint-mobile; 
+        min-height: clamp(1000px, 150vh, 165vh);
+        width: clamp(320px, 100%, $breakpoint-mobile); 
+        margin-top: 2em;
         background-position: 50% 0;
 
         .about-us-backdrop {
+            justify-content: space-around;
             margin: 0 auto;
+            min-width: 100%;
+
+            .about-us-content {
+                max-width: 70%;
+                margin-bottom: 1em;
+
+            }
+
 
             .about-us-stats {
-                margin-top: 15em;
+                // margin-bottom: 10em;
+                margin-top: 0em;
                 max-height: 50vh;
 
                 & > ul {
                     flex-direction: column;
                     max-width: 70vw;
                     max-height: 50vh;
-                    gap: 3em;
+                    gap: 2em;
+                    
+                    & > li > .stats-heading {
+                        font-size: $h3-font-size;
+                    }
                 }
 
+
                 .button {
-                    margin-top: 10em;
+                    margin-top: 17vh;
                 }
             }
 
@@ -78,7 +93,7 @@
 
         & > ul {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             gap: 5em;
         }
 
