@@ -1,10 +1,10 @@
 @media ( max-width: $breakpoint-mobile) { 
     #clients {
         width: clamp(320px, 100%, $breakpoint-mobile);
-        margin: 2em 0;
+        margin: 4em 0;
 
         .testimonial-content {
-            min-width: 70%;
+            min-width: 90%;
 
         }
     }

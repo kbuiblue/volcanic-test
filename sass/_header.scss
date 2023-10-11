@@ -1,7 +1,7 @@
-@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
-    header .header-content {
-        width: clamp(320px, 100%, $breakpoint-mobile);
-        padding: 0 2em;
+@media (max-width: $breakpoint-mobile) {
+    header > .header-content {
+        width: clamp(320px, 100vw, $breakpoint-mobile);
+        padding-left: 5%;
         margin: 0;
 
         .logo-container > a > .logo {
@@ -13,13 +13,12 @@
             .nav-links {
                 display: none;
             }
-    
+
             .nav-buttons {
                 display: none;
             }
         }
     }
-
 }
 
 .header-content {

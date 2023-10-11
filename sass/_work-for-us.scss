@@ -1,6 +1,7 @@
 @media ( max-width: $breakpoint-mobile) { 
     #join-us { 
         width: clamp(320px, 100%, $breakpoint-mobile);
+        margin-top: 10em;
 
         .content-container {
             min-height: 70vh;
@@ -22,7 +23,7 @@
             
             
             & > img {
-                max-height: 20vh;
+                max-height: 25vh;
                 width: 70vw;
                 min-width: 350px;
             }

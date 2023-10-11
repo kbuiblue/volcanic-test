@@ -1,6 +1,6 @@
 @media (max-width: $breakpoint-mobile) {
     #about {
-        min-height: clamp(1000px, 150vh, 165vh);
+        min-height: clamp(1500px, 180vh, 200vh);
         width: clamp(320px, 100%, $breakpoint-mobile); 
         margin-top: 2em;
         background-position: 50% 0;
@@ -18,7 +18,6 @@
 
 
             .about-us-stats {
-                // margin-bottom: 10em;
                 margin-top: 0em;
                 max-height: 50vh;
 
@@ -35,7 +34,7 @@
 
 
                 .button {
-                    margin-top: 17vh;
+                    margin-top: 28vh;
                 }
             }
 

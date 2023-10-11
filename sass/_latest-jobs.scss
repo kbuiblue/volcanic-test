@@ -1,13 +1,15 @@
 @media (max-width: $breakpoint-mobile) {
     #jobs {
         width: clamp(320px, 100%, $breakpoint-mobile);
-        min-height: 85vh;
+        min-height: 100vh;
+        padding: 3em 0;
 
         .carousel {
             min-height: 25em;
             max-width: 70vw;
 
             .jobs-carousel {
+                margin-top: 2em;
                 min-height: 40vh;
 
                 .slick-list {

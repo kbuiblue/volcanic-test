@@ -1,7 +1,7 @@
 @media (max-width: $breakpoint-mobile) {
     #hero {
         width: clamp(320px, 100%, $breakpoint-mobile);
-        min-height: 95vh;
+        min-height: 100vh;
 
         .hero-content {
             h1 {
@@ -27,6 +27,7 @@
         .carousel-container {
             display: flex;
             flex-direction: column;
+            max-height: 28%;
             padding: 0;
         }
     }

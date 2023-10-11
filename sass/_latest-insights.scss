@@ -1,6 +1,7 @@
 @media (max-width: $breakpoint-mobile) {
     #insights {
         min-width: clamp(300px, 85vw, $breakpoint-mobile);
+        margin-top: 8em;
 
         .image-gallery {
             flex-direction: column;

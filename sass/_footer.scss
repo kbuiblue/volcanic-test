@@ -1,17 +1,18 @@
 @media (max-width: $breakpoint-mobile) {
     .footer {
         width: clamp(320px, 100%, $breakpoint-mobile); 
-        min-height: 45em;
+        min-height: 60em;
     }
 
     .footer-content {
         min-width: 100%;
         margin: 0 auto;
         flex-direction: column;
+        gap: 3em;
 
         .footer-socials {
             flex-direction: column;
-            margin: 2em;
+            margin: 0em;
         }
 
         & > .footer-contacts > ul {
