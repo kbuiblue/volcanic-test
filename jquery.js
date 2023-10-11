@@ -202,6 +202,31 @@ $(function () {
     })
 });
 
+$(function () {
+    const header = $("header");
+    const menuButton = $(".header-content nav .menu-button");
+    const logoButton = $(".logo-container a")
+    let menuOpen = false;
+
+    menuButton.on("click", function () {
+        menuOpen = menuOpen ? false : true;
+
+        if(menuOpen) {
+            header.addClass("open");
+            menuButton.addClass("open");
+        } else {
+            header.removeClass("open");
+            menuButton.removeClass("open");
+        }
+    })
+
+    logoButton.on("click", function () {
+        menuOpen = false;
+        header.removeClass("open");
+        menuButton.removeClass("open");
+    })
+})
+
 // $(function () {
 //     const latestInsightsList = $(".latest-insights .image-gallery");
 

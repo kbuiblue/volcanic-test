@@ -10,6 +10,126 @@
         }
 
         nav {
+            .nav-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                min-width: 100%;
+                top: 100%;
+                left: 500%;
+                right: 0;
+                transition: all 0.5s ease-in-out;
+                background-color: $fourth-color;
+
+                .nav-menu-links {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5em;
+                    padding: 1em;
+                    padding-top: 0;
+                    max-width: 100%;
+                    user-select: none;
+
+                    & > a {
+                        @include clickable;
+                        padding: 0.75em 0;
+
+                        &:active {
+                            color: $first-color;
+                        }
+                    }
+                }
+            }
+
+            .menu-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 5em;
+                height: 5em;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+                -webkit-user-select: none;
+                user-select: all;
+
+                .menu-button-burger {
+                    position: relative;
+                    width: 1.75em;
+                    height: 0.1em;
+                    background-color: $second-color;
+                    box-shadow: -1px -1px 3px #000000;
+                    border-radius: 5px;
+                    transition: all 0.5s ease-in-out;
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 1.75em;
+                        height: 0.1em;
+                        background-color: $second-color;
+                        box-shadow: -1px -1px 3px #000000;
+                        border-radius: 5px;
+                        transition: all 0.5s ease-in-out;
+                    }
+
+                    &::before {
+                        transform: translateY(-0.5em);
+                    }
+
+                    &::after {
+                        transform: translateY(0.5em);
+                    }
+                }
+
+                &.open {
+                    .menu-button-burger {
+                        transform: translateX(-50%);
+                        background: transparent;
+                        box-shadow: none;
+                    }
+
+                    .menu-button-burger::before {
+                        transform: rotate(45deg) translate(0.5em, -0.5em);
+                    }
+
+                    .menu-button-burger::after {
+                        transform: rotate(-45deg) translate(0.5em, 0.5em);
+                    }
+
+                    .nav-menu {
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        min-width: 100%;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        transition: all 0.5s ease-in-out;
+                        background-color: $fourth-color;
+        
+                        .nav-menu-links {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5em;
+                            padding: 1em;
+                            padding-top: 0;
+                            max-width: 100%;
+                            user-select: none;
+        
+                            & > a {
+                                @include clickable;
+                                padding: 0.75em 0;
+        
+                                &:active {
+                                    color: $first-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             .nav-links {
                 display: none;
             }
@@ -50,6 +170,10 @@
         min-width: 30%;
         gap: 1.75em;
         flex-wrap: nowrap;
+
+        .nav-menu {
+            display: none;
+        }
 
         .nav-links {
             display: grid;
