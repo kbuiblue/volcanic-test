@@ -32,6 +32,40 @@
     }
 }
 
+@media (min-width: 520px) and (max-width: $breakpoint-tablet) { 
+    #join-us { 
+        width: clamp($breakpoint-mobile, 100%, $breakpoint-tablet);
+        margin-top: 10em;
+
+        .content-container {
+            min-height: 70vh;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .work-for-us-content {
+            height: 30vh;
+            width: 70vw;
+            min-width: 350px;
+            padding: 12em 1em;
+            margin: 0 auto;
+        }
+
+        .work-for-us-image {
+            justify-content: center;
+            max-width: 80vw;
+            
+            
+            & > img {
+                max-height: 35vh;
+                width: 70vw;
+                min-width: 350px;
+            }
+        }
+
+    }
+}
+
 .work-for-us {
     @include section;
     @include default-font;

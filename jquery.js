@@ -111,12 +111,25 @@ $(function () {
             nextArrow: $(".hero-carousel .next-page"),
             responsive: [
                 {
-                    breakpoint: 490,
+                    breakpoint: 1100,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        infinite: true,
+                    },
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    },
+                },
+                {
+                    breakpoint: 600,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        infinite: true,
-                        dots: false,
                     },
                 },
             ],
@@ -184,11 +197,31 @@ $(function () {
             slidesToScroll: PAGE_LIMIT,
             responsive: [
                 {
-                    breakpoint: 479,
+                    breakpoint: 1600,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                    },
+                },
+                {
+                    breakpoint: 1100,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    },
+                },
+                {
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    },
+                },
+                {
+                    breakpoint: 600,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        infinite: false,
                     },
                 },
             ],

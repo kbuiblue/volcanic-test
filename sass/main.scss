@@ -16,13 +16,27 @@ html {
     color: $second-color;
 }
 
-@media ( max-width: $breakpoint-mobile) {
+@media (max-width: $breakpoint-mobile) {
     html,
     body,
     header {
         min-width: 100%;
         min-height: max-content;
         max-width: $breakpoint-mobile;
+    }
+}
+
+@media (min-width: 520px) and (max-width: $breakpoint-tablet) {
+    html,
+    body,
+    header {
+        min-width: 100%;
+        min-height: max-content;
+        max-width: $breakpoint-tablet;
+    }
+
+    #header {
+        justify-content: center;
     }
 }
 

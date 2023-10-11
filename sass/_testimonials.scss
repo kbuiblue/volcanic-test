@@ -1,10 +1,21 @@
-@media ( max-width: $breakpoint-mobile) { 
+@media (max-width: $breakpoint-mobile) {
     #clients {
         width: clamp(320px, 100%, $breakpoint-mobile);
         margin: 4em 0;
 
         .testimonial-content {
             min-width: 90%;
+        }
+    }
+}
+
+@media (min-width: 520px) and (max-width: $breakpoint-tablet) {
+    #clients {
+        width: clamp($breakpoint-mobile, 100%, $breakpoint-tablet);
+        margin: 4em 0;
+
+        .testimonial-content {
+            min-width: 80%;
 
         }
     }
@@ -16,7 +27,7 @@
     @include default-font;
 
     flex-direction: column;
-    color: $fourth-color;   
+    color: $fourth-color;
     min-height: 50vh;
     padding: 5%;
 
@@ -25,7 +36,7 @@
     }
     .testimonial-content {
         max-width: 50%;
-        
+
         .testimonial-quote {
             text-align: center;
             margin-top: 2em;
@@ -48,5 +59,4 @@
             object-fit: cover;
         }
     }
-
 }

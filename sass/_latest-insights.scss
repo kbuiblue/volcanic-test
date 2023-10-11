@@ -30,6 +30,41 @@
     }
 }
 
+@media (min-width: 520px) and (max-width: $breakpoint-tablet) {
+    #insights {
+        min-width: clamp($breakpoint-mobile, 85vw, $breakpoint-tablet);
+        margin-top: 15em;
+
+        .image-gallery {
+            flex-wrap: wrap;
+            width: clamp($breakpoint-mobile, 80%, $breakpoint-tablet);
+
+
+            & > li {
+                display: flex;
+                width: clamp($breakpoint-mobile, 100%, $breakpoint-tablet);
+                max-height: 20em;
+                margin-bottom: 2em;
+                
+                .insight-content {
+                    visibility: visible;
+                    padding-top: 5%;
+                    padding: 2em;
+                    z-index: 1;
+                    opacity: 1;
+                    background: $first-color;
+                }
+
+                & > img {
+                    object-fit: cover;
+                    max-width: 50%;
+                    z-index: 0;
+                }
+            }
+        }
+    }
+}
+
 .latest-insights {
     @include section;
     @include default-font;

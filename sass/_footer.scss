@@ -22,6 +22,30 @@
     }
 }
 
+@media (min-width: 520px) and (max-width: $breakpoint-tablet) {
+    .footer {
+        width: clamp(520px, 100%, $breakpoint-tablet); 
+        padding: 0 1em;
+        min-height: 30em;
+    }
+
+    .footer-content {
+        min-width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+        gap: 3em;
+
+        .footer-socials {
+            flex-direction: row;
+            margin: 0em;
+        }
+
+        & > .footer-contacts > ul {
+            grid-template-columns: repeat(3, minmax(100px, 1fr));;
+        }
+    }
+}
+
 .footer-content {
     @include default-font;
 

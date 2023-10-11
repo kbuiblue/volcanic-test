@@ -2,6 +2,7 @@
     #hero {
         width: clamp(320px, 100%, $breakpoint-mobile);
         min-height: 100vh;
+        min-width: 100vw;
 
         .hero-content {
             h1 {
@@ -13,13 +14,53 @@
             .search-form {
                 flex-direction: column;
                 width: 80%;
+                max-width: 90%;
                 margin-bottom: 2em;
                 gap: 1em;
 
                 & > * {
-                    width: 100%;
-                    padding-top: 0.6em;
-                    padding-bottom: 0.6em;
+                    width: 90%;
+                    margin: 0 auto;
+                    padding-top: 0.75em;
+                    padding-bottom: 0.75em;
+                }
+            }
+        }
+
+        .carousel-container {
+            display: flex;
+            flex-direction: column;
+            max-height: 28%;
+            padding: 0;
+        }
+    }
+}
+
+@media (min-width: 520px) and (max-width: $breakpoint-tablet) {
+    #hero {
+        width: clamp($breakpoint-mobile, 100%, $breakpoint-tablet);
+        min-height: 100vh;
+
+        .hero-content {
+            h1 {
+                font-size: $h1-mobile-size;
+                max-width: 70%;
+                margin: 4em 0 2em 0;
+            }
+
+            .search-form {
+                flex-direction: column;
+                width: 80%;
+                max-width: 80%;
+                margin-bottom: 2em;
+                gap: 1em;
+
+                & > * {
+                    width: 70%;
+                    max-width: 80%;
+                    margin: 0 auto;
+                    padding-top: 1em;
+                    padding-bottom: 1em;
                 }
             }
         }
