@@ -1,3 +1,34 @@
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) { 
+    #join-us { 
+        min-width: $breakpoint-mobile;
+
+        .content-container {
+            min-height: 70vh;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .work-for-us-content {
+            height: 30vh;
+            width: 70vw;
+            padding: 12em 1em;
+            margin: 0 auto;
+        }
+
+        .work-for-us-image {
+            justify-content: center;
+            max-width: 80vw;
+
+
+            & > img {
+                max-height: 20vh;
+                min-width: 70vw;
+            }
+        }
+
+    }
+}
+
 .work-for-us {
     @include section;
     @include default-font;

@@ -112,12 +112,14 @@ $(function () {
             swipeToSlide: true,
             responsive: [
                 {
-                    breakpoint: 1024,
+                    breakpoint: 480,
                     settings: {
-                        slidesToShow: 3,
+                        vertical: true,
+                        verticalSwiping: true,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
                         infinite: true,
-                        dots: true,
+                        dots: false,
                     },
                 },
             ],
@@ -179,7 +181,18 @@ $(function () {
             nextArrow: false,
             slidesToShow: PAGE_LIMIT,
             slidesToScroll: PAGE_LIMIT,
-            swipeToSlide: false,
+            swipeToSlide: true,
+            responsive: [
+                {
+                    breakpoint: 700,
+                    settings: {
+                        rows: 3,
+                        vertical: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                    },
+                },
+            ],
         });
     }
 

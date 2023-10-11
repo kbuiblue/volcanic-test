@@ -16,6 +16,16 @@ html {
     color: $second-color;
 }
 
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+    html,
+    body,
+    header {
+        min-width: 100%;
+        min-height: max-content;
+        max-width: $breakpoint-mobile;
+    }
+}
+
 header {
     @include backdrop-filter;
     @include text-shadow;
@@ -31,7 +41,7 @@ header {
 button {
     @include clickable;
     @include default-font;
-    
+
     font-size: 0.8rem;
     padding: 0.8em 1em;
     border: none;
@@ -48,5 +58,4 @@ footer {
     height: 20em;
     margin-top: 5em;
     background-color: $fourth-color;
-
 }

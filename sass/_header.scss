@@ -1,3 +1,14 @@
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+    header .header-content {
+        max-width: $breakpoint-mobile;
+        margin: 0;
+    }
+
+    .nav-links {
+        visibility: hidden;
+    }
+}
+
 .header-content {
     display: flex;
     justify-content: space-between;

@@ -1,3 +1,26 @@
+@media (min-width: 320px) and (max-width: $breakpoint-mobile) {
+    .footer {
+        min-width: $breakpoint-mobile; 
+        min-height: 45em;
+    }
+
+    .footer-content {
+        min-width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+
+        .footer-socials {
+            flex-direction: column;
+            margin: 2em;
+        }
+
+        & > .footer-contacts > ul {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, minmax(100px, 1fr));
+        }
+    }
+}
+
 .footer-content {
     @include default-font;
 
@@ -20,9 +43,11 @@
             margin-left: 0.25em;
         }
 
-        .social-icons > a:hover {
-            svg > g > path.social-icon-background {
-                fill: $first-color;
+        @media (hover: hover) {
+            .social-icons > a:hover {
+                svg > g > path.social-icon-background {
+                    fill: $first-color;
+                }
             }
         }
     }
@@ -40,36 +65,37 @@
         justify-content: center;
         align-items: center;
 
-        ul {
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+
+        li {
             display: grid;
-            grid-template-columns: repeat(3, minmax(100px, 1fr));
+            grid-template-rows: 4em 2em 4em;
+            grid-template-columns: auto;
+            grid-template-areas:
+                "icon"
+                "heading"
+                "info";
+            text-align: center;
+            padding-top: 1em;
+            justify-items: center;
 
-            li {
-                display: grid;
-                grid-template-rows: 4em 2em 4em;
-                grid-template-columns: auto;
-                grid-template-areas:
-                    "icon"
-                    "heading"
-                    "info";
-                text-align: center;
-                padding-top: 1em;
-                justify-items: center;
+            svg {
+                grid-area: icon;
+                align-self: center;
+                margin-bottom: 1em;
+            }
 
-                svg {
-                    grid-area: icon;
-                    align-self: center;
-                    margin-bottom: 1em;
-                }
+            h3 {
+                grid-area: heading;
+                text-transform: uppercase;
+            }
 
-                h3 {
-                    grid-area: heading;
-                    text-transform: uppercase;
-                }
-
-                p {
-                    grid-area: info;
-                }
+            p {
+                grid-area: info;
             }
         }
     }

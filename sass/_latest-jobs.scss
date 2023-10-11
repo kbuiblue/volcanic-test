@@ -1,3 +1,20 @@
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+    #jobs {
+        min-width: $breakpoint-mobile;
+        min-height: 100vh;
+        
+        .carousel-container {
+            flex-direction: column;
+            max-width: 70vw;
+
+            .slick-dots {
+                max-width: 70vw;
+            }
+        }
+
+    }
+}
+
 .latest-jobs {
     @include section;
     @include default-font;

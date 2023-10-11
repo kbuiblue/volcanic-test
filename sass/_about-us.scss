@@ -1,3 +1,21 @@
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+    #about {
+        min-height: 120vh;
+        max-width: $breakpoint-mobile; 
+        background-position: 0 0;
+
+        .about-us-backdrop {
+            margin: 0 auto;
+
+            .about-us-stats > ul {
+                flex-direction: column;
+                max-width: 70vw;
+            }
+        }
+
+    }
+}
+
 .about-us {
     @include section;
     @include default-font;

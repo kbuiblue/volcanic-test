@@ -1,3 +1,19 @@
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+    .latest-insights {
+        min-width: $breakpoint-mobile; 
+
+        .image-gallery {
+            flex-direction: column;
+            max-width: 100%;
+
+            & > li {
+                max-height: 15em;
+            }
+        }
+    }
+
+}
+
 .latest-insights {
     @include section;
     @include default-font;

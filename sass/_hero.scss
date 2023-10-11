@@ -1,3 +1,20 @@
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) {
+    .hero {
+        @include section;
+
+        max-width: $breakpoint-mobile;
+        aspect-ratio: initial;
+
+        .carousel-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+    }
+
+}
+
 .hero {
     @include section;
 

@@ -1,3 +1,11 @@
+@media (min-width: 320px) and ( max-width: $breakpoint-mobile) { 
+    #clients {
+        min-width: $breakpoint-mobile;
+        margin: 2em 0;
+    }
+
+}
+
 .testimonials {
     @include section;
     @include default-font;
