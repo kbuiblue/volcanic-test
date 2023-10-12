@@ -369,6 +369,10 @@
 
         .nav-buttons {
             display: flex;
+
+            & > button {
+                max-height: 3em;
+            }
         }
     }
 }
