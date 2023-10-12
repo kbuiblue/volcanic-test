@@ -14,11 +14,11 @@
 
                 .slick-list {
                     min-height: 25em;
-    
+
                     .slick-track {
                         min-height: 25em;
                         gap: 0.025em;
-        
+
                         & > .slick-slide {
                             width: 100%;
                             min-height: 25em;
@@ -36,6 +36,13 @@
                 }
             }
         }
+    }
+}
+
+@media (min-width: $breakpoint-desktop) and (max-width: $breakpoint-fullscreen) {
+    #jobs {
+        width: clamp($breakpoint-tablet, 100%, $breakpoint-fullscreen);
+
     }
 }
 

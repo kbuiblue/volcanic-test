@@ -1,5 +1,7 @@
 $breakpoint-mobile: 519px;
-$breakpoint-tablet: 1100px;
+$breakpoint-tablet: 1099px;
+$breakpoint-desktop: 1199px;
+$breakpoint-fullscreen: 1400px;
 
 $first-color: #e67c28;
 $second-color: #ffffff;
@@ -7,9 +9,7 @@ $third-color: #ebebeb;
 $fourth-color: #3b3f4a;
 $fifth-color: #798091;
 
-$h1-mobile-size: clamp(1rem, 2.5vw + 1rem, 3.5rem);
-
-$h1-font-size: clamp(1.5rem, 3vw + 1rem, 3.5rem);
+$h1-font-size: clamp(1.5rem, 2.75vw + 1rem, 3.5rem);
 $h2-font-size: clamp(1.25rem, 2vw + 1rem, 2.5rem);
 $h3-font-size: clamp(1rem, 2vw + 1rem, 1.25rem);
 $p-font-size: clamp(.75rem, 1.25vw + 0.25rem, 1rem);

@@ -6,7 +6,7 @@
 
         .hero-content {
             h1 {
-                font-size: $h1-mobile-size;
+                font-size: $h1-font-size;
                 max-width: 90%;
                 margin: 4em 0 2em 0;
             }
@@ -19,7 +19,7 @@
                 gap: 1em;
 
                 & > * {
-                    width: 90%;
+                    width: 80%;
                     margin: 0 auto;
                     padding-top: 0.75em;
                     padding-bottom: 0.75em;
@@ -38,12 +38,12 @@
 
 @media (min-width: 520px) and (max-width: $breakpoint-tablet) {
     #hero {
-        width: clamp($breakpoint-mobile, 100%, $breakpoint-tablet);
-        min-height: 100vh;
+        width: 100%;
+        min-height: 105vh;
 
         .hero-content {
             h1 {
-                font-size: $h1-mobile-size;
+                font-size: $h1-font-size;
                 max-width: 70%;
                 margin: 4em 0 2em 0;
             }
@@ -51,13 +51,13 @@
             .search-form {
                 flex-direction: column;
                 width: 80%;
-                max-width: 80%;
+                max-width: 90%;
                 margin-bottom: 2em;
                 gap: 1em;
 
                 & > * {
                     width: 70%;
-                    max-width: 80%;
+                    max-width: 85%;
                     margin: 0 auto;
                     padding-top: 1em;
                     padding-bottom: 1em;
@@ -70,6 +70,51 @@
             flex-direction: column;
             max-height: 28%;
             padding: 0;
+
+            .hero-carousel {
+                min-width: 60%;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    #hero {
+        width: 100%;
+        min-height: 105vh;
+
+        .hero-content {
+            margin: 2em;
+
+            h1 {
+                margin-top: 10%;
+                max-width: 70%;
+            }
+
+            .search-form {
+
+                & > * {
+                    width: 90%;
+                }
+            }
+        }
+        .carousel-container {
+            padding: 0
+        }
+
+        .nav-links > a {
+            justify-items: center;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-desktop) and (max-width: $breakpoint-fullscreen) {
+    #hero {
+        .hero-content {
+            margin: 2em;
+            h1 {
+                max-width: 70%;
+            }
         }
     }
 }
@@ -79,7 +124,7 @@
 
     flex-direction: column;
     position: relative;
-    background-image: url("./images/hero-image-2.jpg");
+    background-image: url("/images/hero-image-2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     aspect-ratio: 16 / 9;
@@ -93,6 +138,8 @@
         align-items: center;
         height: 100%;
         width: 100%;
+        margin: 1em;
+
 
         h1 {
             @include text-shadow;
@@ -103,6 +150,7 @@
             font-weight: $h1-font-weight;
             max-width: 50%;
             margin-bottom: 0.75em;
+            
         }
 
         form {

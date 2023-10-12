@@ -1,15 +1,21 @@
 @media (max-width: $breakpoint-mobile) {
-    header > .header-content {
-        width: clamp(320px, 100vw, $breakpoint-mobile);
-        padding-left: 5%;
+    #header > .header-content {
+        width: clamp(300px, 100vw, $breakpoint-mobile);
+        align-items: center;
+        padding: 0 5%;
         margin: 0;
 
-        .logo-container > a > .logo {
-            max-width: 6em;
-            padding-bottom: 0;
+        .logo-container {
+            & > a > .logo {
+                max-width: 6em;
+                padding: 0;
+            }
         }
+        
 
         nav {
+            margin-right: 3.5vw;
+
             .nav-menu {
                 display: flex;
                 flex-direction: column;
@@ -45,8 +51,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 5em;
-                height: 5em;
+                width: 2em;
+                height: 2em;
                 cursor: pointer;
                 transition: all 0.5s ease-in-out;
                 -webkit-user-select: none;
@@ -107,7 +113,7 @@
                         right: 0;
                         transition: all 0.5s ease-in-out;
                         background-color: $fourth-color;
-        
+
                         .nav-menu-links {
                             display: flex;
                             flex-direction: column;
@@ -116,11 +122,11 @@
                             padding-top: 0;
                             max-width: 100%;
                             user-select: none;
-        
+
                             & > a {
                                 @include clickable;
                                 padding: 0.75em 0;
-        
+
                                 &:active {
                                     color: $first-color;
                                 }
@@ -143,8 +149,8 @@
 
 @media (min-width: 520px) and (max-width: $breakpoint-tablet) {
     header > .header-content {
-        min-width: clamp($breakpoint-mobile, 100vw, $breakpoint-mobile);
-        padding-left: 5%;
+        width: 95vw;
+        padding: 0 2.5%;
         margin: 0;
 
         .logo-container > a > .logo {
@@ -153,6 +159,8 @@
         }
 
         nav {
+            margin-right: 2.5%;
+            
             .nav-menu {
                 display: flex;
                 flex-direction: column;
@@ -250,7 +258,7 @@
                         right: 0;
                         transition: all 0.5s ease-in-out;
                         background-color: $fourth-color;
-        
+
                         .nav-menu-links {
                             display: flex;
                             flex-direction: column;
@@ -259,11 +267,11 @@
                             padding-top: 0;
                             max-width: 100%;
                             user-select: none;
-        
+
                             & > a {
                                 @include clickable;
                                 padding: 0.75em 0;
-        
+
                                 &:active {
                                     color: $first-color;
                                 }
@@ -284,11 +292,26 @@
     }
 }
 
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-fullscreen) {
+    #header > .header-content {
+        width: 90vw;
+        margin: 0 auto;
+
+        nav {
+            gap: 1em;
+
+            .nav-links {
+                gap: 0.5em;
+            }
+        }
+    }
+}
+
 .header-content {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: clamp(300px, 90vw, 100vw);
+    width: clamp(1200px, 95vw, 100vw);
     min-height: 5em;
 
     & > * {

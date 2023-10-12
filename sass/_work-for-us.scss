@@ -1,6 +1,6 @@
-@media ( max-width: $breakpoint-mobile) { 
-    #join-us { 
-        width: clamp(320px, 100%, $breakpoint-mobile);
+@media (max-width: $breakpoint-mobile) {
+    #join-us {
+        width: clamp(300px, 90%, $breakpoint-mobile);
         margin-top: 10em;
 
         .content-container {
@@ -20,20 +20,18 @@
         .work-for-us-image {
             justify-content: center;
             max-width: 80vw;
-            
-            
+
             & > img {
                 max-height: 25vh;
                 width: 70vw;
                 min-width: 350px;
             }
         }
-
     }
 }
 
-@media (min-width: 520px) and (max-width: $breakpoint-tablet) { 
-    #join-us { 
+@media (min-width: 520px) and (max-width: $breakpoint-tablet) {
+    #join-us {
         width: clamp($breakpoint-mobile, 100%, $breakpoint-tablet);
         margin-top: 10em;
 
@@ -54,15 +52,13 @@
         .work-for-us-image {
             justify-content: center;
             max-width: 80vw;
-            
-            
+
             & > img {
                 max-height: 35vh;
                 width: 70vw;
                 min-width: 350px;
             }
         }
-
     }
 }
 
@@ -91,7 +87,6 @@
         width: 30vw;
         height: 40vh;
         max-height: 440px;
-
 
         min-width: 50%;
         gap: 1.5em;

@@ -65,6 +65,20 @@
     }
 }
 
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-fullscreen) { 
+    #insights {
+        min-width: 90vw;
+        margin: 4em auto;
+
+        .image-gallery {
+            min-width: 100%;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
 .latest-insights {
     @include section;
     @include default-font;

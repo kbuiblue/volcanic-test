@@ -111,7 +111,7 @@ $(function () {
             nextArrow: $(".hero-carousel .next-page"),
             responsive: [
                 {
-                    breakpoint: 1100,
+                    breakpoint: 1400,
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4,
@@ -204,7 +204,7 @@ $(function () {
                     },
                 },
                 {
-                    breakpoint: 1100,
+                    breakpoint: 1400,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 3,
@@ -259,13 +259,3 @@ $(function () {
         menuButton.removeClass("open");
     })
 })
-
-// $(function () {
-//     const latestInsightsList = $(".latest-insights .image-gallery");
-
-//     latestInsightsList.forEach((li) => {
-//         li.addEventListener("click", () => {
-//             li.querySelector(".insight-content").addClass("show-content");
-//         });
-//     });
-// });

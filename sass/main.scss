@@ -20,8 +20,6 @@ html {
     html,
     body,
     header {
-        min-width: 100%;
-        min-height: max-content;
         max-width: $breakpoint-mobile;
     }
 }
@@ -30,8 +28,6 @@ html {
     html,
     body,
     header {
-        min-width: 100%;
-        min-height: max-content;
         max-width: $breakpoint-tablet;
     }
 
@@ -39,6 +35,16 @@ html {
         justify-content: center;
     }
 }
+
+@media (min-width: $breakpoint-desktop) and (max-width: $breakpoint-fullscreen) {
+    html,
+    body,
+    header {
+        max-width: $breakpoint-fullscreen;
+    }
+
+}
+
 
 header {
     @include backdrop-filter;

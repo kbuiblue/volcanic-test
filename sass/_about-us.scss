@@ -89,6 +89,12 @@
     }
 }
 
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-fullscreen) { 
+    #about {
+        width: 100%;
+    }
+}
+
 .about-us {
     @include section;
     @include default-font;
@@ -96,7 +102,7 @@
 
     max-height: 50vh;
     min-width: 100%;
-    background-image: url("./images/about-us.jpg");
+    background-image: url("/images/about-us.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0 25%;
